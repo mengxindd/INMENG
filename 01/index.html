@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作业1</title>
+    <style type="text/css">
+        li{
+            width:auto;
+            list-style: none;
+            float: left;
+            margin-right: 5px;
+        }
+        .bigImg{
+            position: absolute;
+        }
+    </style>
+    <script src="jquery-3.3.1.js"></script>
+    <script type="text/javascript">
+        var imgs=[{"smallSrc":"imgs/1_small.jpg","bigSrc":"imgs/1.jpg"},{"smallSrc":"imgs/2_small.jpg","bigSrc":"imgs/2.jpg"},
+        {"smallSrc":"imgs/3_small.jpg","bigSrc":"imgs/3.jpg"}];
+        function init(){
+            for(var i in imgs){
+                $("ul").append("<li><img class='smallPic' num="+i+" src='"+imgs[i].smallSrc+"'></li>");
+            }
+        }
+            $(function(){
+                init();
+                $(".smallPic").mouseover(function(e){
+                    var bigImgEle="<div class='bigImg'><img src='"+imgs[this.getAttribute("num")].bigSrc+"'></div>";
+                    $("body").append(bigImgEle);
+                    $(".bigImg").css({"top":e.pageY+10+"px","left":e.pageX+10+"px"}).show();
+                }).mouseout(function(){
+                    $(".bigImg").remove();
+                }).mousemove(function(e){
+                    $(".bigImg").css({"top":e.pageY+10+"px","left":e.pageX+10+"px"})
+                })
+            })
+    </script>
+</head>
+<body>
+    <ul>
+
+    </ul>
+</body>
+</html>

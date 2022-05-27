@@ -1,0 +1,41 @@
+ul li{
+    width: 180px;
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+.menu{
+    width: 190px;
+    border: solid 1px #E5D1A1;
+    background-color: #FFFDD2;
+    text-align: center;
+}
+.tips{
+    width: 190px;
+    border: solid 2px #ffa200;
+    position: absolute;
+    padding: 10px;
+    background-color:#fff;
+    display: none;
+}
+.titleFous{
+    background-color: burlywood;
+    font-weight: lighter;
+}
+.title{
+    width: 190px;
+    line-height: 28px;
+    border-top: dashed 1px #ccc;
+    text-align: center;
+}
+.content{
+    -webkit-transition: all;
+    -o-transition: all;
+    transition: all;
+    padding-left: 0px;
+}
+a{
+    text-decoration:none ;
+    color: #666;
+    padding: 10px;
+}

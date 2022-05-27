@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第二个作业</title>
+    <link rel="stylesheet" href="css.css">
+    <script src="jquery-3.3.1.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            var valT;
+            var valH;
+            var valW;
+            function setInitValue(obj){
+                valY=obj.offset().top;
+                valH=obj.height();
+                valW=obj.width();
+            }
+            $(".title").mouseover(function(){
+                setInitValue($(this));
+                var allY=valY - valH + "px";
+                $(this).addClass("titleFous");
+                $(this).next("ul").show().css({"top":allY,"left":valW+50+"px"})
+            }).mouseout(function(){
+                $(this).next("ul").hide();
+                $(this).removeClass("titleFous");
+            })
+         });
+    </script>
+</head>
+<body>
+<ul>
+    <li class="menu">  
+        <div>
+            <span>家用电器</span>
+        </div>
+        <ul class="content">
+            <li class="title"><a href="#">厨房电器</a></li>
+            <ul class="tips">
+                <li><a href="#">豆浆机</a></li>
+                <li><a href="#">微波炉</a></li>
+                <li><a href="#">电磁炉· </a></li>
+                <li><a href="#">电烤箱</a></li>
+                <li><a href="#">洗碗机</a></li>
+            </ul>
+            <li class="title"><a href="#">生活电器</a></li>
+            <ul class="tips">
+                <li><a href="#">台灯</a></li>
+                <li><a href="#">扫地机器人</a></li>
+                <li><a href="#">吸尘器</a></li>
+                <li><a href="#">电风扇</a></li>
+                <li><a href="#">挂烫机</a></li>
+            </ul>
+            <li class="title"><a href="#">智能装备</a></li>
+            <ul class="tips">
+                <li><a href="#">智能手表</a></li>
+                <li><a href="#">智能手环</a></li>
+                <li><a href="#">智能摄像头</a></li>
+                <li><a href="#">无人机</a></li>
+                <li><a href="#">智能排插</a></li>
+            </ul>
+            <li class="title"><a href="#">办公设备</a></li>
+            <ul class="tips">
+                <li><a href="#">投影仪</a></li>
+                <li><a href="#">打印机</a></li>
+                <li><a href="#">碎纸机</a></li>
+                <li><a href="#">多功能办公一体机</a></li>
+                <li><a href="#">点钞机/验钞机</a></li>
+            </ul>
+    </ul>
+  </li>
+</ul>
+</body>
+</html>
